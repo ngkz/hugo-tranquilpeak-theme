@@ -32,7 +32,7 @@
     }
     {{ end }}
   },
-  "description": {{ .Summary | plainify | safeHTML }},
+  "description": {{ .Summary | plainify | chomp |  safeHTML }},
   "keywords": [{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}]
 }
 {{ else }}
